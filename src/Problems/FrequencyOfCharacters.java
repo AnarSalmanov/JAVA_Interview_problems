@@ -24,8 +24,23 @@ public class FrequencyOfCharacters {
 
     //MAIN METHOD
     public static void main(String[] args) {
-        System.out.println(frequencyOfChar("Life is wonderful").toString());
+       // System.out.println(frequencyOfChar("Life is wonderful").toString());
+        System.out.println(value("Life is wonderful"));
     }
 
-
+     public static String value (String str){
+        str=str.toLowerCase().replace(" ", "").trim();
+        Map<Character, Integer> map = new HashMap<>();
+         for (int i = 0; i < str.length(); i++) {
+             Character temp = str.charAt(i);
+             if (map.containsKey(temp)) {
+                 map.put(temp, map.get(temp) + 1);
+             } else {
+                 map.put(temp, 1);
+             }
+         }
+         return map.toString().toUpperCase().replace("=","").replace(",","")
+                 .replace("{","").replace("}","")
+                 .replace(" ","");
+     }
 }
