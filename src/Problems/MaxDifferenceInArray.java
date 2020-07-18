@@ -5,13 +5,13 @@ public class MaxDifferenceInArray {
      * Find maximum difference of array elements
      */
     public static int maxDifference(int[] nums) {
-        int max = 0;
+        int maxDiff = 0;
         for (int i = 0; i < nums.length - 1; i++) {
-            if (nums[i + 1] - nums[i] > max) {
-                max = nums[i + 1] - nums[i];
+            if (nums[i + 1] - nums[i] > maxDiff) {
+                maxDiff = nums[i + 1] - nums[i];
             }
         }
-        return max;
+        return maxDiff;
     }
 
     //MAIN METHOD
