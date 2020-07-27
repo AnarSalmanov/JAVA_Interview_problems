@@ -16,8 +16,8 @@ public class Armstrong {
             list.add(Character.getNumericValue(numToString.charAt(i)));
         }
         int sum = 0;
-        for (Integer number : list) {
-            int tempCube = number * number * number;
+        for (Integer temp : list) {
+            int tempCube = temp * temp * temp;
             sum += tempCube;
         }
         if (sum == num) {

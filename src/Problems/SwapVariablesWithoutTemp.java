@@ -15,5 +15,7 @@ public class SwapVariablesWithoutTemp {
     //MAIN METHOD
     public static void main(String[] args) {
         swapVariables(5, 10);
+        //a is : 10
+        //b is : 5
     }
 }
