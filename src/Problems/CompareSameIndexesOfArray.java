@@ -20,7 +20,7 @@ public class CompareSameIndexesOfArray {
                 matchedValues.add(a[i]);
             }
         }
-        return matchedValues.toArray();
+        return matchedValues.toArray(); //Returns Object[]
     }
 
     //MAIN METHOD

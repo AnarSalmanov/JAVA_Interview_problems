@@ -4,7 +4,9 @@ public class PrintingPyramidPattern {
     //MAIN METHOD
     public static void main(String[] args) {
         // increasingPyramid('*', 10);
-        decreasedPyramid('*', 10);
+       // decreasedPyramid('*', 10);
+       // pyramidIncrease();
+        pyramidDecrease();
     }
 
     /**
@@ -32,4 +34,24 @@ public class PrintingPyramidPattern {
             System.out.println();
         }
     }
+
+    public static void pyramidIncrease(){
+        for(int i=1 ; i<=10; i++) {
+            for(int j=1 ; j<=i; j++){
+                System.out.print(j+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pyramidDecrease(){
+        for(int i=10 ; i>=1; i--) {
+            for(int j=1 ; j<=i; j++){
+                System.out.print(j+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+
 }

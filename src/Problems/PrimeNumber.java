@@ -1,24 +1,28 @@
 package Problems;
 
 public class PrimeNumber {
+
     /**
      * Find whether given number is prime or not
      */
-    public static boolean isPrime(int n) {
-        if (n == 1) {
+
+    public static boolean isPrime(int num) {
+        if (num == 0 || num == 1) {
             return false;
         }
-        if ((n * n - 1) % 24 == 0) {
-            return true;
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                return false;
+            }
         }
-        return false;
+        return true;
     }
 
-    //MAIN METHOD
     public static void main(String[] args) {
-        System.out.println(isPrime(1)); // false
-        System.out.println(isPrime(13)); // true
-        System.out.println(isPrime(11)); // true
+        for(int i=0 ; i<=30; i++){
+            System.out.print(i + " ");
+            System.out.println(isPrime(i));
+        }
 
     }
 

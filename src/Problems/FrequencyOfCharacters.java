@@ -12,7 +12,7 @@ public class FrequencyOfCharacters {
         str = str.replace(" ", "").toLowerCase();
         Map<Character, Integer> frequencyOfChar = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
-            Character temp = str.charAt(i);
+            Character temp = Character.valueOf(str.charAt(i));
             if (frequencyOfChar.containsKey(temp)) {
                 frequencyOfChar.put(temp, frequencyOfChar.get(temp) + 1);
             } else {
@@ -32,7 +32,7 @@ public class FrequencyOfCharacters {
         str = str.toLowerCase().trim().replace(" ", "");
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
-            Character temp = str.charAt(i);
+            Character temp = Character.valueOf(str.charAt(i));
             if (map.containsKey(temp)) {
                 map.put(temp, map.get(temp) + 1);
             } else {
