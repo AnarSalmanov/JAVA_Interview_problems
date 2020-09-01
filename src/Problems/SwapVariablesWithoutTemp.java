@@ -8,8 +8,7 @@ public class SwapVariablesWithoutTemp {
         a = a + b;
         b = a - b;
         a = a - b;
-        System.out.println("a is : " + a);
-        System.out.println("b is : " + b);
+        System.out.println("a is : " + a +" , b is: " +b);
     }
 
     //MAIN METHOD

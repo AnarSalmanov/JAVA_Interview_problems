@@ -1,6 +1,6 @@
 package Problems;
 
-public class MaxDifferenceInArray {
+public class MaxConcectiveDiffArray {
     /**
      * Find maximum difference of array elements
      */

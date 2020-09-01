@@ -1,7 +1,6 @@
 package Problems;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class FrequencyOfCharacters {
 
@@ -25,7 +24,17 @@ public class FrequencyOfCharacters {
     //MAIN METHOD
     public static void main(String[] args) {
         // System.out.println(frequencyOfChar("Life is wonderful").toString());
-        System.out.println(value("Life is wonderful"));
+      //  System.out.println(value("Life is wonderful"));
+        System.out.println(frequency("Salmananov", 's')); //1
+    }
+
+    public static long frequency (String str, char ch){
+        List<Character>list = new ArrayList<>();
+        str=str.toLowerCase();
+        for(int i=0 ; i<str.length() ;i++){
+            list.add(Character.valueOf(str.charAt(i)));
+        }
+       return list.stream().filter(c->c.equals(Character.valueOf(ch))).count();
     }
 
     public static String value(String str) {

@@ -1,39 +1,41 @@
 package Problems;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UniqueElementsInArray {
-    // MAIN METHOD
+
     public static void main(String[] args) {
-        List<Integer> uniqueNumbers = uniqueNums(new Integer[]{2, 3, 2, 4, 4, 8, 9, 9, 4, 8, 10});
-        System.out.println(uniqueNumbers); // 3, 10  in list
-        System.out.println(Arrays.toString(uniqueValues(new int [] {1,1,2,2,3,4,5,3,4}))); //5
+        System.out.println(notRepeted2(new int[]{2, 3, 2, 4, 4, 8, 9, 9, 4, 8, 10})); // 3, 10
+        System.out.println(Arrays.toString(notRepeated(new int[]{1, 1, 2, 2, 3, 4, 5, 3, 4}))); //5
+        System.out.println(Arrays.toString(unique(new int[]{1, 1, 3, 3, 2, 2, 5, 5, 6, 7, 7, 9, 9})));
+        //[1, 3, 2, 5, 6, 7, 9]
     }
 
     /**
      * Show only unique elements in array (never repeated)
      */
-    public static List<Integer> uniqueNums(Integer[] arr) {
+    public static List<Integer> notRepeted2(int[] arr) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < arr.length; i++) {
-            Integer temp = arr[i];
+            Integer temp = Integer.valueOf(arr[i]);
             if (map.containsKey(temp)) {
                 map.put(temp, map.get(temp) + 1);
             } else {
                 map.put(temp, 1);
             }
         }
-        List<Integer> unique = new ArrayList<>();
+        List<Integer> notRepeated = new ArrayList<>();
         for (Integer key : map.keySet()) {
             if (map.get(key) == 1) {
-                unique.add(key);
+                notRepeated.add(key);
             }
         }
-        return unique;
+        return notRepeated;
     }
 
     // 2nd Way
-    public static int[] uniqueValues(int[] arr) {
+    public static int[] notRepeated(int[] arr) {
         int count = 0;
         List<Integer> uniqueList = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
@@ -56,4 +58,12 @@ public class UniqueElementsInArray {
         return onlyUniques;
     }
 
+
+    public static int[] unique(int[] nums) {
+        List<Integer> initial = new ArrayList<>();
+        for (Integer n : nums) {
+            initial.add(Integer.valueOf(n));
+        }
+        return initial.stream().distinct().mapToInt(i -> i).toArray();
+    }
 }

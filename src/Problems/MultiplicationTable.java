@@ -15,7 +15,7 @@ public class MultiplicationTable {
         return total;
     }
 
-    //MAIN METHOD
+
     public static void main(String[] args) {
         System.out.println(multiplication(7, 2));
     }
