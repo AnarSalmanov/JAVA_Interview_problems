@@ -5,12 +5,12 @@ public class Reverse_Integer {
         System.out.println(reverseInt(123456));
     }
 
-    public static int reverseInt(int num) {
+    public static int reverseInt(int n) {
         int rev = 0;
-        while (num != 0) {
-            int temp = num % 10;
+        while (n != 0) {
+            int temp = n % 10;
             rev = rev * 10 + temp;
-            num /= 10;
+            n /= 10;
         }
         return rev;
     }
