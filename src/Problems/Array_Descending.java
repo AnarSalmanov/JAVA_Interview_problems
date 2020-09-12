@@ -1,6 +1,8 @@
 package Problems;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Array_Descending {
     private int anInt;
@@ -14,9 +16,12 @@ public class Array_Descending {
         Arrays.sort(arr);
         int j = 0;
         for (int i = arr.length - 1; i >= 0; i--) {
-            anInt;
             j++;
         }
         return built;
+    }
+
+    public static List<Integer> sorted(List<Integer> numList) {
+        return numList.stream().sorted().collect(Collectors.toList());
     }
 }
