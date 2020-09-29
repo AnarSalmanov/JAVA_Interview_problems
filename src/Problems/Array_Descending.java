@@ -14,9 +14,8 @@ public class Array_Descending {
     public static int[] descOrder(int[] arr) {
         int[] built = new int[arr.length];
         Arrays.sort(arr);
-        int j = 0;
         for (int i = arr.length - 1; i >= 0; i--) {
-            j++;
+            built[i]=arr[i];
         }
         return built;
     }
@@ -24,4 +23,5 @@ public class Array_Descending {
     public static List<Integer> sorted(List<Integer> numList) {
         return numList.stream().sorted().collect(Collectors.toList());
     }
+
 }

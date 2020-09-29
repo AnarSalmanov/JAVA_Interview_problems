@@ -3,9 +3,7 @@ package Problems;
 import com.sun.xml.internal.ws.addressing.WsaActionUtil;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Test {
@@ -27,6 +25,9 @@ public class Test {
 //        System.out.println(sumOfArray(new int[]{1, 2, 4, 6}));
 //        swapVariables(10, 20);
 //        System.out.println(Arrays.toString(distinctValues(new int[]{1, 1, 2, 2, 3, 3, 4})));
+//        System.out.println(Arrays.toString(distinctValues(new char[]{'a', 'a', 'b', 'b', 'c', 'c'})));
+//        System.out.println(uniqueElementsList(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4})));
+        System.out.println(Arrays.toString(uniqueElementsArray(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4}))));
     }
 
     public static boolean isArmstrong(int num) {
@@ -197,5 +198,28 @@ public class Test {
             built.add(num[i]);
         }
         return built.stream().distinct().mapToInt(n -> n).toArray();
+    }
+
+    public static char[] distinctValues(char[] values) {
+        Set<Character> set = new HashSet<>();
+        for (int i = 0; i < values.length; i++) {
+            set.add(Character.valueOf(values[i]));
+        }
+        char[] distinct = new char[set.size()];
+        Iterator<Character> it = set.iterator();
+        int j = 0;
+        while (it.hasNext()) {
+            distinct[j] = it.next();
+            j++;
+        }
+        return distinct;
+    }
+
+    public static List<Integer> uniqueElementsList(List<Integer> list) {
+        return list.stream().distinct().collect(Collectors.toList());
+    }
+
+    public static int[] uniqueElementsArray(List<Integer> list) {
+        return list.stream().distinct().mapToInt(n -> n).toArray();
     }
 }
