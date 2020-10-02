@@ -7,15 +7,17 @@ public class PrimeNumber {
      */
 
     public static boolean isPrime(int num) {
+        boolean result = true;
         if (num == 0 || num == 1) {
-            return false;
+            result = false;
         }
         for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
-                return false;
+                result = false;
+                break;
             }
         }
-        return true;
+        return result;
     }
 
     public static void main(String[] args) {
