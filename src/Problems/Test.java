@@ -1,6 +1,5 @@
 package Problems;
 
-import com.sun.xml.internal.ws.addressing.WsaActionUtil;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -27,7 +26,8 @@ public class Test {
 //        System.out.println(Arrays.toString(distinctValues(new int[]{1, 1, 2, 2, 3, 3, 4})));
 //        System.out.println(Arrays.toString(distinctValues(new char[]{'a', 'a', 'b', 'b', 'c', 'c'})));
 //        System.out.println(uniqueElementsList(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4})));
-        System.out.println(Arrays.toString(uniqueElementsArray(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4}))));
+//        System.out.println(Arrays.toString(uniqueElementsArray(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4}))));
+        System.out.println(factorial(0));
     }
 
     public static boolean isArmstrong(int num) {
@@ -221,5 +221,16 @@ public class Test {
 
     public static int[] uniqueElementsArray(List<Integer> list) {
         return list.stream().distinct().mapToInt(n -> n).toArray();
+    }
+
+    public static int factorial(int num) {
+        if (num == 0) {
+            return 1;
+        }
+        int fact = 1;
+        for (int i = 1; i <= num; i++) {
+            fact *= i;
+        }
+        return fact;
     }
 }
