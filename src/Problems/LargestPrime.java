@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class LargestPrime {
+
     public static boolean isPrime(int n) {
         boolean result = true;
         if (n == 0 || n == 1) {

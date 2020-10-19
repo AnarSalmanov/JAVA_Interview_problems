@@ -11,9 +11,9 @@ public class Factorial {
         if (num == 0) {
             return 1;
         }
-        int total = 1;
+        int fact = 1;
         for (int i = 1; i <= num; i++)
-            total *= i;
-        return total;
+            fact *= i;
+        return fact;
     }
 }

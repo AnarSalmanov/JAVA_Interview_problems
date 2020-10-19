@@ -27,7 +27,13 @@ public class Test {
 //        System.out.println(Arrays.toString(distinctValues(new char[]{'a', 'a', 'b', 'b', 'c', 'c'})));
 //        System.out.println(uniqueElementsList(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4})));
 //        System.out.println(Arrays.toString(uniqueElementsArray(Arrays.asList(new Integer[]{1, 1, 2, 2, 3, 3, 4, 4}))));
-        System.out.println(factorial(0));
+//        System.out.println(factorial(0));
+        double a = -3.1756;
+        System.out.println((int) Math.abs(a * 1000));
+        double b = 3.17577;
+        System.out.println((int) Math.abs(b * 1000));
+
+
     }
 
     public static boolean isArmstrong(int num) {
