@@ -8,14 +8,16 @@ public class Array_Descending {
     private int anInt;
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(descOrder(new int[]{6, 4, 7, 2, 9, 1}))); //[1, 2, 4, 6, 7, 9]
+        System.out.println(Arrays.toString(descOrder(new int[]{6, 4, 7, 2, 9, 1}))); //[9, 7, 6, 4, 2, 1]
     }
 
-    public static int[] descOrder(int[] arr) {
-        int[] built = new int[arr.length];
-        Arrays.sort(arr);
-        for (int i = arr.length - 1; i >= 0; i--) {
-            built[i] = arr[i];
+    public static int[]descOrder (int[]num){
+        Arrays.sort(num);
+        int []built = new int[num.length];
+        int j=0;
+        for (int i=num.length-1; i>=0 ; i--){
+            built[j]=num[i];
+            j++;
         }
         return built;
     }

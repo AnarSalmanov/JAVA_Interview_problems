@@ -8,7 +8,7 @@ public class PlaceToEnd {
 
     public static void main(String[] args) {
         //System.out.println(Arrays.toString(zerosToEnd(new Integer[]{0, 1, 0, 3, 6, 7, 8, 0, 13, 16, 0})));
-        System.out.println(zeroToEnd(new int[]{0, 1, 0, 3, 6, 7, 8, 0, 13, 16, 0}));
+        System.out.println(Arrays.toString(zeroToEnd(new int [] {0,1,0,2,0,3})));
         //[1, 3, 6, 7, 8, 13, 16, 0, 0, 0, 0]
     }
 
@@ -28,7 +28,7 @@ public class PlaceToEnd {
         return list.toArray();  //returns only Object array.
     }
 
-    public static List<Integer> zeroToEnd(int[] num) {
+    public static int[] zeroToEnd(int[] num) {
         List<Integer> built = new ArrayList<>();
         int count = 0;
         for (int i = 0; i < num.length; i++) {
@@ -41,7 +41,7 @@ public class PlaceToEnd {
         for (int i = 0; i < count; i++) {
             built.add(0);
         }
-        return built;
+        return built.stream().mapToInt(n -> n).toArray();
     }
 
 

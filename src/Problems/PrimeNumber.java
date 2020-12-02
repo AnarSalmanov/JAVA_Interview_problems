@@ -5,27 +5,34 @@ public class PrimeNumber {
     /**
      * Find whether given number is prime or not
      */
+    public static void main(String[] args) {
+        System.out.println(largestPrime(50)); //47
+        System.out.println(isPrime(-3));
+    }
 
     public static boolean isPrime(int num) {
-        boolean result = true;
         if (num == 0 || num == 1) {
-            result = false;
+            return false;
         }
         for (int i = 2; i <= num / 2; i++) {
             if (num % i == 0) {
-                result = false;
-                break;
+                return false;
             }
         }
-        return result;
+        return true;
     }
 
-    public static void main(String[] args) {
-        for (int i = 0; i <= 30; i++) {
-            System.out.println(i + " - " + isPrime(i));
+
+    public static int largestPrime(int n) {
+        int largest = 0;
+        for (int i = 0; i <= n; i++) {
+            if (isPrime(i)) {
+                if (i > largest) {
+                    largest = i;
+                }
+            }
         }
-
+        return largest;
     }
-
 
 }

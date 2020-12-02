@@ -6,10 +6,8 @@ import java.util.Arrays;
 public class FibonacciSeries {
 
     public static void main(String[] args) {
-
-
-        System.out.println(Arrays.toString(fibonacciSeries(8)));
-        System.out.println(nthFib(8));
+        System.out.println(Arrays.toString(fibonacciSeries(8))); // whole array
+        System.out.println(nthFib(2)); //21
     }
 
 
@@ -28,7 +26,7 @@ public class FibonacciSeries {
     }
 
     /*
-     Give me nth fibonachi number
+     Give me nth fibonacci number
      */
     public static int nthFib(int n) {
         if (n == 0) {
@@ -41,7 +39,7 @@ public class FibonacciSeries {
         fibArray[0] = 0;
         fibArray[1] = 1;
         for (int i = 2; i < fibArray.length; i++) {
-            fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+            fibArray[i] = fibArray[i - 2] + fibArray[i - 1];
         }
         return fibArray[n];
     }

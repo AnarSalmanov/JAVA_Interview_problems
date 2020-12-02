@@ -24,21 +24,22 @@ public class FrequencyOfCharacters {
     //MAIN METHOD
     public static void main(String[] args) {
         // System.out.println(frequencyOfChar("Life is wonderful").toString());
-      //  System.out.println(value("Life is wonderful"));
-        System.out.println(frequency("Salmananov", 's')); //1
+        //  System.out.println(value("Life is wonderful"));
+        //System.out.println(frequency("Salmananov", 's')); //1
+        System.out.println(value("aaabbbcccdd"));
     }
 
-    public static long frequency (String str, char ch){
-        List<Character>list = new ArrayList<>();
-        str=str.toLowerCase();
-        for(int i=0 ; i<str.length() ;i++){
+    public static long frequency(String str, char ch) {
+        List<Character> list = new ArrayList<>();
+        str = str.toLowerCase();
+        for (int i = 0; i < str.length(); i++) {
             list.add(Character.valueOf(str.charAt(i)));
         }
-       return list.stream().filter(c->c.equals(Character.valueOf(ch))).count();
+        return list.stream().filter(c -> c.equals(Character.valueOf(ch))).count();
     }
 
     public static String value(String str) {
-        str = str.toLowerCase().trim().replace(" ", "");
+        str = str.trim();
         Map<Character, Integer> map = new HashMap<>();
         for (int i = 0; i < str.length(); i++) {
             Character temp = Character.valueOf(str.charAt(i));
@@ -48,9 +49,7 @@ public class FrequencyOfCharacters {
                 map.put(temp, 1);
             }
         }
-        return map.toString().toUpperCase()
-                .replace("=", "").replace(",", "")
-                .replace("{", "").replace("}", "")
-                .replace(" ", "");
+        // return map.toString().replaceAll("[{ }=,]", "");
+        return map.toString().replaceAll("\\W", "");
     }
 }
