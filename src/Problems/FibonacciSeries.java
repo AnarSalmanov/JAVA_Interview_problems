@@ -7,7 +7,7 @@ public class FibonacciSeries {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(fibonacciSeries(8))); // whole array
-        System.out.println(nthFib(2)); //21
+        System.out.println(nthFib(6)); //->5
     }
 
 
@@ -35,13 +35,13 @@ public class FibonacciSeries {
         if (n == 1) {
             return 1;
         }
-        int[] fibArray = new int[n + 1];
+        int[] fibArray = new int[n];
         fibArray[0] = 0;
         fibArray[1] = 1;
         for (int i = 2; i < fibArray.length; i++) {
             fibArray[i] = fibArray[i - 2] + fibArray[i - 1];
         }
-        return fibArray[n];
+        return fibArray[n-1];
     }
 
 }
