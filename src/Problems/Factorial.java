@@ -6,6 +6,7 @@ public class Factorial {
 //        System.out.println(factorial(5));//120
 //        System.out.println(factorial(0)); //1
         System.out.println(factorial2(5));
+        System.out.println(factor(6));
     }
 
 
@@ -26,4 +27,26 @@ public class Factorial {
         }
         return num * factorial2(num - 1);
     }
+
+
+    public static int factor(int a) {
+        int init = 1;
+        for (int i = 1; i <= a; i++) {
+            init *= i;
+        }
+        return init;
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+

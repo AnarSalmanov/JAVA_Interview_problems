@@ -29,7 +29,8 @@ public class FrequencyOfCharacters {
 //          System.out.println(value("AAABBAABB")); //A5B4
 //        System.out.println(frequency("Salmananov", 's')); //1
 //        System.out.println(value("aaabbbcccdd"));
-        System.out.println(repeated("AAABBAACCBBCCCS")); //A3B2A2C2B2
+//        System.out.println(repeated("AAABBAACCBBCCCS")); //A3B2A2C2B2
+        System.out.println(repeated("AAABBAACCBBCCCS"));
     }
 
     public static long frequency(String str, char ch) {
@@ -55,20 +56,22 @@ public class FrequencyOfCharacters {
         return map.toString().replaceAll("\\W", "");
     }
 
-    public static String repeated(String str) {
+
+
+    public static String repeated(String s) {
         String build = "";
-        for (int i = 0; i < str.length() - 1; i++) {
-            String temp = String.valueOf(str.charAt(i));
-            if (str.charAt(i) != str.charAt(i + 1)) {
-                temp = "" + str.charAt(i) + ",";
+        for (int i = 0; i < s.length() - 1; i++) {
+            String temp = String.valueOf(s.charAt(i));
+            if (s.charAt(i) != s.charAt(i + 1)) {
+                temp = s.charAt(i) + ",";
             }
             build += temp;
         }
-        build += str.charAt(str.length() - 1);
+        build += s.charAt(s.length() - 1);
         String[] arr = build.split(",");
         String last = "";
-        for (String s : arr) {
-            last += s.charAt(0) + "" + s.length();
+        for (String st : arr) {
+            last += st.charAt(0) + "" + st.length();
         }
         return last;
     }
