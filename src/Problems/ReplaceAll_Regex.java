@@ -14,10 +14,11 @@ public class ReplaceAll_Regex {
     public static void main(String[] args) {
 //        System.out.println(Arrays.toString(built(new String[]{"Elvin", "Xezer", "Samir","Anar"})));
 //        System.out.println(Arrays.toString(sort(Arrays.asList(new Integer[]{55, 32, 1, 60, 77}))));
-        System.out.println(valid("pppppoooppeeeyyee"));
+//        System.out.println(valid("pppppoooppeeeyyee"));
 //        System.out.println(volume(new int []{1,2,3,4,5}));
 //        System.out.println(factorial(5));
 //        System.out.println(onlyAlphabetical("123Anar_=-Salmanov?}"));
+        System.out.println(removeExtraSpaces("  Hello   how   are  you  !  "));
 
     }
 
@@ -59,5 +60,9 @@ public class ReplaceAll_Regex {
                 .replaceAll("\\W", "") // remove all characters except _
                 .replace("_", "") // remove _
                 .replaceAll("", "");
+    }
+
+    public static String removeExtraSpaces (String str){
+        return str.replaceAll("\\s+"," ").trim();
     }
 }
